@@ -3,8 +3,11 @@ An app that lets user track their meals including taking picture and adding shor
 Required bower packages:
 
 bower install ngCordova
+
 bower install angular-moment
+
 bower install parse-angular-patch
+
 bower install angular-messages
 
 Parse is used on the backend
