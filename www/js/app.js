@@ -27,7 +27,7 @@ app.run(function ($ionicPlatform) {
 	});
 
 		// Initialise Parse
-		Parse.initialize("<PLEASE-INSERT>", "<PLEASE-INSERT>");
+		Parse.initialize("6pgqEMjRyIDt0LUY5dKE7NeluUX0AO7yMZEbouon", "Pn8iRvIKaYo4F5OWrHB72MibJzpakfZUZP6cOcx6");
 });
 
 app.config(function ($stateProvider, $urlRouterProvider) {
