@@ -18,8 +18,8 @@
 					       ng-required="true" >
 				</label >
 				<div class="form-errors"
-				     ng-messages="createForm.title.$error"
-				     ng-messages-include="templates/form-errors.html" >
+				     ng-messages="createForm.title.$error">
+				     <div ng-messages-include="templates/form-errors.html" ></div>
 				</div >
 
 				<!-- Category -->
@@ -40,8 +40,8 @@
 					</select >
 				</label >
 				<div class="form-errors"
-				     ng-messages="createForm.category.$error"
-				     ng-messages-include="templates/form-errors.html" >
+				     ng-messages="createForm.category.$error">
+				     <div ng-messages-include="templates/form-errors.html" ></div>
 				</div >
 
 				<!-- Price -->
@@ -62,8 +62,8 @@
 					</div >
 				</label >
 				<div class="form-errors"
-				     ng-messages="createForm.calories.$error"
-				     ng-messages-include="templates/form-errors.html" >
+				     ng-messages="createForm.calories.$error">
+				     <div ng-messages-include="templates/form-errors.html" ></div>
 				</div >
 			</ion-list >
 

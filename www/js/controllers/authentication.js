@@ -14,7 +14,10 @@ app.controller('LoginCtrl', function ($scope, $state, AuthService) {
 
 		if (form.$valid) {
 			console.log("LoginCtrl::login");
-			AuthService.login($scope.formData.email, $scope.formData.password);
+			AuthService.login($scope.formData.email, $scope.formData.password)
+				.then(function(){
+					$state.go("tab.meals")
+				});
 		}
 	};
 

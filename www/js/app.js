@@ -49,7 +49,33 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			abstract: true,
 			templateUrl: "templates/tabs.html"
 		})
-		//TODO
+		.state('tab.meals', {
+			url: '/meals',
+			views: {
+				'tab-meals': {
+					templateUrl: 'templates/tabs/tab-meals.html',
+					controller: 'MealListCtrl'
+				}
+			}
+		})
+		.state('tab.track', {
+			url: '/track',
+			views: {
+				'tab-track': {
+					templateUrl: 'templates/tabs/tab-track.html',
+					controller: 'MealListCtrl'
+				}
+			}
+		})
+		.state('tab.account', {
+			url: '/account',
+			views: {
+				'tab-account': {
+					templateUrl: 'templates/tabs/tab-account.html',
+					controller: 'AccountCtrl'
+				}
+			}
+		})				
 	;
 
 	// if none of the above states are matched, use this as the fallback
