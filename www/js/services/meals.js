@@ -3,7 +3,7 @@ var app = angular.module('mealtrack.services.meals', []);
 app.service("MealService", function ($q, AuthService) {
 	var self = {
 		'page': 0,
-		'page_size': '20',
+		'page_size': 20,
 		'isLoading': false,
 		'isSaving': false,
 		'hasMore': true,
@@ -24,7 +24,34 @@ app.service("MealService", function ($q, AuthService) {
 			self.isLoading = true;
 			var d = $q.defer();
 
-			//TODO
+			//Initialize Query
+			var Meal = Parse.Object.extend("Meal");
+			var mealQuery = new Parse.Query(Meal);
+			mealQuery.descending('created');
+			mealQuery.equalTo("owner", AuthService.user);
+
+			//Paginate
+			mealQuery.skip(self.page * self.page_size);
+			mealQuery.limit(self.page_size);
+
+			//Perform the query
+			mealQuery.find({
+				success: function(results) {
+					angular.forEach(results, function(item){
+						var meal = new Meal(item);
+						self.results.push(meal);
+					});
+					console.debug(self.results);
+
+					//Are we at the end of the list?
+					if (results.length == 0) {
+						self.hasMore = false;
+					}
+
+					//Finished
+					d.resolve();
+				}
+			});
 
 			return d.promise;
 		},
