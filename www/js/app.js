@@ -63,7 +63,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			views: {
 				'tab-track': {
 					templateUrl: 'templates/tabs/tab-track.html',
-					controller: 'MealListCtrl'
+					controller: 'MealCreateCtrl'
 				}
 			}
 		})
