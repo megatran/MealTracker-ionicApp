@@ -52,7 +52,24 @@ app.service('AuthService', function ($q, $ionicPopup) {
 		'update': function (data)  {
 			var d = $q.defer();
 
-			//TODO
+			var user = self.user;
+			user.set("username", data.email);
+			user.set("name", data.name);
+			user.set("email", data.email);
+
+			user.save(null, {
+				success: function (user) {
+					self.user = user;
+					d.resolve(self.user);
+				},
+				error: function (user, error) {
+					$ionicPopup.alert({
+						title: "Save Error",
+						subTitle: error.message
+					});
+					d.reject(error);
+				}
+			});
 
 			return d.promise;
 		}
