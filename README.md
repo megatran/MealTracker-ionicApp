@@ -7,8 +7,8 @@
 An app that lets user track their meals including taking picture and adding short description and the option to estimate calories.
 
 ## Install
-Setup ionic and its environment
-[Ionic](http://ionicframework.com/docs/cli/start.html)
+Setup [Ionic](http://ionicframework.com/docs/cli/start.html) and its environment
+
 ```
 npm install -g ionic
 ```
