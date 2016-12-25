@@ -1,3 +1,9 @@
+<p align = "center">
+    <img src="media/meal_tracker.jpg" />
+</p>
+
+<br>
+
 An app that lets user track their meals including taking picture and adding short description and the option to estimate calories.
 
 Required bower packages:
